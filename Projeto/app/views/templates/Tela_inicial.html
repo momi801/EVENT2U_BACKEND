@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT2U - Descubra Eventos Incríveis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Tela_inicial.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">EVENT2U</div>
+            
+            <!-- Estado: Usuário NÃO LOGADO -->
+            <div class="user-info logged-out" id="loggedOutState">
+                <button class="login-btn" id="openLoginBtn">Entrar</button>
+            </div>
+            
+            <!-- Estado: Usuário LOGADO -->
+            <div class="user-info logged-in" id="loggedInState">
+                <div class="user-avatar dropdown-trigger">M</div>
+                <div>
+                    <div>Maria Silva</div>
+                    <div class="user-status">online</div>
+                </div>
+                
+                <!-- Dropdown Menu -->
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <div class="dropdown-item">
+                        👤 Meu Perfil
+                    </div>
+                    <div class="dropdown-item">
+                        🎫 Meus Ingressos
+                    </div>
+                    <div class="dropdown-item">
+                        ⚙️ Configurações
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item logout-btn" id="logoutBtn">
+                        🚪 Sair
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav">
+            <a href="#" class="nav-item active">Início</a>
+            <a href="#" class="nav-item">Meus Ingressos</a>
+            <a href="#" class="nav-item">Meu perfil</a>
+        </div>
+
+        <!-- Barra de Pesquisa -->
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Pesquisar eventos, artistas, locais...">
+                <button class="search-btn">
+                    🔍
+                </button>
+            </div>
+            <div class="search-filters">
+                <button class="filter-btn active">Todos</button>
+                <button class="filter-btn">Shows</button>
+                <button class="filter-btn">Festivais</button>
+                <button class="filter-btn">Teatro</button>
+                <button class="filter-btn">Esportes</button>
+            </div>
+        </div>
+        
+        <div class="content">
+            <!-- Banner Principal -->
+            <div class="hero-banner">
+                <div class="banner-content">
+                    <h1>TAYLOR SWIFT</h1>
+                    <p class="banner-subtitle">THE ERAS TOUR</p>
+                    <p class="banner-date">2024 • Estádios por todo Brasil</p>
+                    <button class="btn btn-primary" id="bannerTicketBtn">Comprar Ingressos</button>
+                </div>
+            </div>
+
+            <!-- Shows em Destaque -->
+            <section class="events-section">
+                <h2 class="section-title">Shows em Destaque</h2>
+                <div class="events-grid">
+                    <!-- My Chemical Romance -->
+                    <div class="event-card">
+                        <div class="event-image" style="background: linear-gradient(135deg, #000000, #2c3e50);">
+                            <div class="event-status">ESGOTADO</div>
+                        </div>
+                        <div class="event-info">
+                            <h3 class="event-name">MY CHEMICAL ROMANCE</h3>
+                            <p class="event-artist">Com THE HIVES</p>
+                            <p class="event-date">QUI 05/FEV/2026 - SEX 06/FEV/2026</p>
+                            <p class="event-location">Allianz Parque • São Paulo, Brasil</p>
+                            <div class="event-price">Ingressos Esgotados</div>
+                            <button class="btn btn-disabled" disabled>ESGOTADO</button>
+                        </div>
+                    </div>
+
+                    <!-- Linkin Park -->
+                    <div class="event-card">
+                        <div class="event-image" style="background: linear-gradient(135deg, #1e3c72, #2a5298);">
+                        </div>
+                        <div class="event-info">
+                            <h3 class="event-name">LINKIN PARK</h3>
+                            <p class="event-artist">FROM ZERO WORLD TOUR</p>
+                            <p class="event-date">2025 • Santander</p>
+                            <p class="event-location">Arenas Internacionais</p>
+                            <div class="event-price">A partir de R$ 280,00</div>
+                            <button class="btn btn-primary">Comprar Ingressos</button>
+                        </div>
+                    </div>
+
+                    <!-- Tyler, The Creator -->
+                    <div class="event-card">
+                        <div class="event-image" style="background: linear-gradient(135deg, #ff6b6b, #ffa500);">
+                        </div>
+                        <div class="event-info">
+                            <h3 class="event-name">TYLER, THE CREATOR</h3>
+                            <p class="event-artist">CHROMAKOPIA WORLD TOUR</p>
+                            <p class="event-date">2024 • Turnê Mundial</p>
+                            <p class="event-location">Principais Capitais</p>
+                            <div class="event-price">A partir de R$ 220,00</div>
+                            <button class="btn btn-primary">Comprar Ingressos</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Eventos Especiais -->
+            <section class="events-section">
+                <h2 class="section-title">Eventos Especiais</h2>
+                <div class="events-grid">
+                    <!-- Candlelight -->
+                    <div class="event-card">
+                        <div class="event-image" style="background: linear-gradient(135deg, #8B4513, #D2691E);">
+                        </div>
+                        <div class="event-info">
+                            <h3 class="event-name">CANDLELIGHT</h3>
+                            <p class="event-artist">FEVER - Tributo a Músicas Clássicas</p>
+                            <p class="event-date">Datas Flexíveis • 2024</p>
+                            <p class="event-location">Teatros e Salas Especiais</p>
+                            <div class="event-price">A partir de R$ 90,00</div>
+                            <button class="btn btn-outline">Ver Datas</button>
+                        </div>
+                    </div>
+
+                    <!-- Festival Internacional -->
+                    <div class="event-card">
+                        <div class="event-image" style="background: linear-gradient(135deg, #228B22, #32CD32);">
+                            <div class="event-status">NOVO</div>
+                        </div>
+                        <div class="event-info">
+                            <h3 class="event-name">FESTIVAL INTERNACIONAL</h3>
+                            <p class="event-artist">Vários Artistas</p>
+                            <p class="event-date">15-17/MAR/2024</p>
+                            <p class="event-location">Parque do Ibirapuera • SP</p>
+                            <div class="event-price">A partir de R$ 180,00</div>
+                            <button class="btn btn-primary">Comprar Ingressos</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" id="closeLoginModal">&times;</span>
+                <div class="logo">EVENT2U</div>
+            </div>
+            <div class="modal-body">
+                <h3 style="text-align: center; margin-bottom: 20px; font-family: 'Montserrat';">Acesse sua conta</h3>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">E-mail</label>
+                        <input type="email" id="loginEmail" placeholder="fulano@gmail.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loginPassword">Senha</label>
+                        <input type="password" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+                    
+                    <div class="forgot-password">
+                        <a href="#" id="forgotPassword">Esqueci minha senha</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">ENTRAR</button>
+                </form>
+                
+                <div class="modal-footer">
+                    <p>Não tem uma conta? <a href="#" id="goToRegister">Cadastre-se agora</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/Tela_inicial.js') }}"></script>
+</body>
+</html>

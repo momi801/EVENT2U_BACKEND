@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT2U - Meus Ingressos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Meus_ingressos.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">EVENT2U</div>
+            <div class="user-info">
+                <div class=
+                <div>
+                    <div></div>
+                    <div class="user-status"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav">
+            <a href="#" class="nav-item active">Meus Ingressos</a>
+            <a href="#" class="nav-item">Meu perfil</a>
+        </div>
+        
+        <div class="content">
+            <h2 class="section-title">Meus Ingressos</h2>
+            
+            <!-- Ingresso 1 - Confirmado -->
+            <div class="ticket-card">
+                <div class="event-name">Nome do Evento</div>
+                
+                <div class="ticket-info">
+                    <div class="info-item">
+                        Nº Ingresso: <span class="info-value">20250001</span>
+                    </div>
+                    <div class="info-item">
+                        Data: <span class="info-value">20/09/2025 a 30/09/2025</span>
+                    </div>
+                    <div class="info-item">
+                        Valor Total: <span class="info-value">R$ 5,00</span>
+                    </div>
+                </div>
+                
+                <div class="ticket-status">
+                    <span class="status-badge status-confirmed">Confirmado</span>
+                    <button class="btn btn-cancel">Cancelar Inscrição</button>
+                </div>
+            </div>
+            
+            <!-- Ingresso 2 - Cancelado -->
+            <div class="ticket-card">
+                <div class="event-name">Nome do Evento</div>
+                
+                <div class="ticket-info">
+                    <div class="info-item">
+                        Nº Ingresso: <span class="info-value">20240022</span>
+                    </div>
+                    <div class="info-item">
+                        Data: <span class="info-value">20/01/2024 a 20/01/2024</span>
+                    </div>
+                    <div class="info-item">
+                        Valor Total: <span class="info-value">R$ 0,00</span>
+                    </div>
+                </div>
+                
+                <div class="ticket-status">
+                    <span class="status-badge status-canceled">Cancelado</span>
+                </div>
+            </div>
+            
+            <!-- Ingresso 3 -  adicional -->
+            <div class="ticket-card">
+                <div class="event-name">Festival de Música 2024</div>
+                
+                <div class="ticket-info">
+                    <div class="info-item">
+                        Nº Ingresso: <span class="info-value">20240015</span>
+                    </div>
+                    <div class="info-item">
+                        Data: <span class="info-value">15/03/2024 a 17/03/2024</span>
+                    </div>
+                    <div class="info-item">
+                        Valor Total: <span class="info-value">R$ 120,00</span>
+                    </div>
+                </div>
+                
+                <div class="ticket-status">
+                    <span class="status-badge status-confirmed">Confirmado</span>
+                    <button class="btn btn-cancel">Cancelar Inscrição</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/Meus_ingressos.js') }}"></script>
+</body>
+</html>
